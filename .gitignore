@@ -25,3 +25,9 @@ yarn.lock
 yarn-error.log
 
 website/docs/dist
+cypress/integration/examples
+cypress/screenshots
+cypress/videos
+
+
+

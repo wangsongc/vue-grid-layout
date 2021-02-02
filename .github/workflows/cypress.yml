@@ -1,0 +1,13 @@
+name: cypress test
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: test:e2e
+        run: |
+          yarn
+          yarn test:e2e

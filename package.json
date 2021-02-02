@@ -26,6 +26,8 @@
     "build-lib": "rimraf dist && vue-cli-service build --target lib ./src/components/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "start-server-and-test serve http://localhost:8080/ test:e2e:run",
+    "test:e2e:run": "cypress run --config baseUrl=http://localhost:8080/",
     "test:cover": "vue-cli-service test:unit --coverage"
   },
   "dependencies": {
@@ -47,9 +49,11 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^26.6.3",
     "babel-plugin-transform-flow-comments": "^6.7.0",
+    "cypress": "^6.4.0",
     "node-sass": "^4.13.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
+    "start-server-and-test": "^1.12.0",
     "vue": "^2.6.12",
     "vue-jest": "^3.0.7",
     "vue-template-compiler": "^2.6.12",
