@@ -1,5 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import GridLayout from '../../src/components/GridLayout.vue'
+/* eslint-env jest */
 
 let layout
 

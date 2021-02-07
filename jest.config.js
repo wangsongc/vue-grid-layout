@@ -10,6 +10,9 @@ module.exports = {
   transformIgnorePatterns: [
     "<rootDir>/node_modules/(?!@babel|@interactjs)",
   ],
+  testMatch: [
+    "**/test/unit/*.spec.js"
+  ],
   transform: {
     '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest',

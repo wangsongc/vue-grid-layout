@@ -204,7 +204,7 @@ export function getStatics(layout: Layout): Array<LayoutItem> {
  * @param  {Number}     [x]    X position in grid units.
  * @param  {Number}     [y]    Y position in grid units.
  * @param  {Boolean}    [isUserAction] If true, designates that the item we're moving is
- *                                     being dragged/resized by th euser.
+ *                                     being dragged/resized by the user.
  */
 export function moveElement(layout: Layout, l: LayoutItem, x: Number, y: Number, isUserAction: Boolean, preventCollision: Boolean): Layout {
   if (l.static) return layout;
