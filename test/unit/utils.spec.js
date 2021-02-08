@@ -5,12 +5,11 @@ import {
   bottom,
   collides,
   compact,
-  fastRGLPropsEqual,
   moveElement,
   sortLayoutItemsByRowCol,
   validateLayout
 } from "../../src/helpers/utils";
-//测试返回底部的y坐标 
+
 describe("bottom", () => {
   it("Handles an empty layout as input", () => {
     expect(bottom([])).toEqual(0);
@@ -25,7 +24,7 @@ describe("bottom", () => {
     ).toEqual(3);
   });
 });
-//按照y值升序，y相等则比较x升序
+
 describe("sortLayoutItemsByRowCol", () => {
   it("should sort by top to bottom right", () => {
     const layout = [
@@ -40,7 +39,7 @@ describe("sortLayoutItemsByRowCol", () => {
     ]);
   });
 });
-//判断两个LayoutItem是否产生碰撞
+
 describe("collides", () => {
   it("Returns whether the layout items collide", () => {
     expect(
@@ -57,7 +56,7 @@ describe("collides", () => {
     ).toEqual(true);
   });
 });
-//校验layout是否合法，非法则抛出错误信息  
+
 describe("validateLayout", () => {
   it("Validates an empty layout", () => {
     validateLayout([]);
@@ -72,13 +71,12 @@ describe("validateLayout", () => {
     expect(() => {
       validateLayout([
         { i: "1", x: 0, y: 1, w: 1, h: 1 },
-        // $FlowFixMe: dynamic check
         { i: "2", x: 1, y: 2, w: 1 }
       ]);
     }).toThrowError(/layout\[1\]\.h must be a number!/i);
   });
 });
-//移动grid-item  
+
 describe("moveElement", () => {
   function compactAndMove(
     layout,
@@ -105,7 +103,7 @@ describe("moveElement", () => {
       cols
     );
   }
-  //非重排模式(preventCollision)下，不改变布局  
+
   it("Does not change layout when colliding on no rearrangement mode", () => {
     const layout = [
       { i: "1", x: 0, y: 1, w: 1, h: 1, moved: false },
@@ -126,7 +124,7 @@ describe("moveElement", () => {
       { i: "2", x: 1, y: 2, w: 1, h: 1, moved: false }
     ]);
   });
-  //重排模式下，改变布局  
+
   it("Does change layout when colliding in rearrangement mode", () => {
     const layout = [
       { i: "1", x: 0, y: 0, w: 1, h: 1, moved: false },
@@ -289,6 +287,7 @@ describe("compact vertical", () => {
       { i: "1", x: 0, y: 0, w: 1, h: 1, moved: false }
     ]);
   });
+
   it("Resolve collision by moving item further down in array", () => {
     const layout = [
       { x: 0, y: 0, w: 1, h: 5, i: "1" },
